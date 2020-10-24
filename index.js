@@ -3,6 +3,8 @@ const path = require("path");
 const express =  require("express");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+
+require('dotenv').config();
 const LIFF_ID = process.env.LIFF_ID;
 const port = process.env.PORT || 5000;
 var eventData = require("./database/event-data.json")
