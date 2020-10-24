@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const cors = require('cors');
 const express =  require("express");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -14,9 +15,10 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(cors());
 
 app.get('/liff-id', function(req, res) {
-    res.json({id: LIFF_ID});
+    res.json({liffId: LIFF_ID});
 });
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "webpage", "index.html"));
@@ -61,9 +63,11 @@ app.post('/signup-event/api/:id(\\d+)', (req, res) => {
         res.send("failed");
     }
 });
-app.get('/query-user-event/', (req, res) => {
+app.get('/query-user-event', (req, res) => {
+    console.log(123);
     try {
         const userID = req.query.userID;
+        console.log(userID);
         var events = [];
         for (i in userData) {
             console.log(i);
@@ -83,6 +87,7 @@ app.get('/query-user-event/', (req, res) => {
         })
         res.json(events);
     }catch(e) {
+        console.log(e);
         res.send("null");
     }
 });
@@ -103,3 +108,4 @@ function getRandomInt(max = 1000000) {
 }
 
 app.listen(port, () => console.log(`app listening on port ${port}!`));
+
