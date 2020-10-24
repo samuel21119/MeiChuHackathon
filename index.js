@@ -16,6 +16,9 @@ app.use(cookieParser());
 app.get('/liff-id', function(req, res) {
     res.json({id: LIFF_ID});
 });
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "webpage", "index.html"));
+})
 app.get(/.*/, (req, res, next) => {
     console.log(req.url);
     var fname = req.url;
