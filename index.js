@@ -73,7 +73,7 @@ app.get('/query-user-event', (req, res) => {
             console.log(i);
             if (userData[i][userID]) {
                 events.push({
-                    "eventID": i,
+                    "id": i,
                     "time": eventData[i]["time"],
                     "title": eventData[i]["title"],
                     "description": eventData[i]["description"]

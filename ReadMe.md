@@ -61,13 +61,13 @@ Return value: sorted by time
 ```json
 [
     {
-        "eventID": "???",
+        "id": "???",
         "time": "???",
         "title": "???",
         "description":"???"
     },
     {
-        "eventID": "???",
+        "id": "???",
         "time": "???",
         "title": "???",
         "description":"???"
