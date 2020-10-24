@@ -55,11 +55,8 @@ Return value: "success" or "failed"
 ## Query
 Get user's event.  
 
-### HTML page
-GET: `/query-user-event/`  
-
 ### Get data
-GET: `/query-user-event/api/?userID=`  
+GET: `/query-user-event/?userID=`  
 Return value: sorted by time  
 ```json
 [

@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 
 require('dotenv').config();
 const LIFF_ID = process.env.LIFF_ID;
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 var eventData = require("./database/event-data.json")
 var userData = require("./database/user-data.json")
 
@@ -21,17 +21,8 @@ app.get('/liff-id', function(req, res) {
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "webpage", "index.html"));
 })
-app.get(/.*/, (req, res, next) => {
-    console.log(req.url);
-    var fname = req.url;
-    fname = fname.slice((fname.lastIndexOf(".") - 1 >>> 0) + 2);
-    console.log(fname);
-    if (fname === "css" || fname === "js" || fname === "html") {
-        res.sendFile(path.join(__dirname, "webpage", req.url));
-    }
-    else
-        next();
-});
+
+app.use(express.static("webpage"));
 app.get("/create-event", (req, res) => {
     res.sendFile(path.join(__dirname, "webpage", "create-event", "index.html"));
 })
@@ -71,9 +62,6 @@ app.post('/signup-event/api/:id(\\d+)', (req, res) => {
     }
 });
 app.get('/query-user-event/', (req, res) => {
-    res.sendFile(path.join(__dirname, "webpage", "query-user-event", "index.html"));
-});
-app.get('/query-user-event/api', (req, res) => {
     try {
         const userID = req.query.userID;
         var events = [];
