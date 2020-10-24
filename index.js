@@ -3,8 +3,8 @@ const path = require("path");
 const express =  require("express");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const config = require("./config.json");
 const LIFF_ID = process.env.LIFF_ID;
+const port = process.env.PORT || 5000;
 var eventData = require("./database/event-data.json")
 var userData = require("./database/user-data.json")
 
@@ -97,9 +97,6 @@ app.get('/query-user-event/api', (req, res) => {
     }
 });
 
-writeDatabase();
-app.listen(config["Web-port"], () => console.log(`Application listening on port ${config["Web-port"]}!`));
-
 function writeDatabase() {
     fs.writeFile(path.join("database", "event-data.json"), JSON.stringify(eventData, null, "  "), (err) => {
         if (err)
@@ -114,3 +111,5 @@ function writeDatabase() {
 function getRandomInt(max = 1000000) {
   return Math.floor(Math.random() * Math.floor(max));
 }
+
+app.listen(port, () => console.log(`app listening on port ${port}!`));
