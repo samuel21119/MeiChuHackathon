@@ -4,6 +4,7 @@ const express =  require("express");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const config = require("./config.json");
+const LIFF_ID = process.env.LIFF_ID;
 var eventData = require("./database/event-data.json")
 var userData = require("./database/user-data.json")
 
@@ -12,6 +13,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+app.get('/liff-id', function(req, res) {
+    res.json({id: LIFF_ID});
+});
 app.get(/.*/, (req, res, next) => {
     console.log(req.url);
     var fname = req.url;
@@ -43,8 +47,7 @@ app.get("/signup-event/:id(\\d+)", (req, res) => {
 app.get('/signup-event/api/:id(\\d+)', (req, res) => {
     const eventCode = req.params.id;
     try {
-        const re = JSON.stringify(eventData[eventCode]);
-        res.send(re);
+        res.json(eventData[eventCode]);
     }catch (e) {
         res.send("null");
     }
@@ -85,7 +88,7 @@ app.get('/query-user-event/api', (req, res) => {
                 return 1;
             return -1;
         })
-        res.send(JSON.stringify(events));
+        res.json(events);
     }catch(e) {
         res.send("null");
     }

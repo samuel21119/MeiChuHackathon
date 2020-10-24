@@ -1,5 +1,14 @@
 # Server backend
 
+## LIFF ID
+GET: `/liff-id`
+Return value:
+```json
+{
+    "id": LIFF_ID
+}
+```
+
 ## Webpage Dir
 
 `/webpage`
