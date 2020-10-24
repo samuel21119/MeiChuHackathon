@@ -31,6 +31,16 @@ Return value:
 
 ### Submit
 POST: `/signup-event/api/EVENT_CODE`  
+```
+{
+    "userID": "???",
+    "question": {
+        "Q1": "A1",
+        "Q2": "A2",
+        "Q3": "A3"
+    }
+}
+```
 Return value: "success" or "failed"  
 
 ## Query
