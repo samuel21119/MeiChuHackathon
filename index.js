@@ -36,7 +36,7 @@ app.post("/account_reg", (req, res) => {
     const id = form["id"];
     const type = form["type"];
     userData[id] = {
-        "type": type,
+        "type": String(type),
         "event": []
     };
     writeDatabase();
@@ -74,7 +74,9 @@ app.post("/create_event", (req, res) => {
  */
 
 app.get("/reg_event", (req, res) => {
+    
     const code = req.query.code;
+    console.log(code)
     let re = {
         "name": eventData[code]["name"],
         "description": eventData[code]["description"],
@@ -99,10 +101,7 @@ app.post("/reg_event", (req, res) => {
  * {
  *   id: USER_ID(PER),
  *   code: EVENT_CODE,
- *   question: {
- *     "Q1": "A1",
- *     "Q2": "A2"
- *   }
+ *   question: ["A1", "A2"]
  * }
  */
 

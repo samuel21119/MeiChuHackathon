@@ -1,36 +1,44 @@
 {
-  "405445": {
-    "id": "samuel2",
-    "time": "20201225",
-    "name": "事件A",
-    "description": "註解",
+  "237891": {
+    "id": "U62b4eacd88a754dd0ee4c5d433763a48",
+    "name": "ABC",
+    "time": "20200102",
+    "description": "Jdjd",
     "question": [
-      "學校",
-      "系級",
-      "身分證字號"
+      "7122"
     ],
     "reg": {},
     "checkin": []
   },
-  "470565": {
-    "id": "samuel2",
+  "350529": {
+    "id": "U62b4eacd88a754dd0ee4c5d433763a48",
+    "name": "黑客松",
     "time": "20201025",
-    "name": "梅竹黑客松",
-    "description": "註解",
+    "description": "123",
     "question": [
-      "學校",
-      "系級",
-      "身分證字號"
+      "AAA",
+      "Bang",
+      "7122"
     ],
     "reg": {
-      "jerry1": {
-        "學校": "清華大學",
-        "系級": "資工24",
-        "身分證字號": "A123456789"
-      }
+      "U18193007b13cd808176a0c6dbaf6aced": [
+        "A",
+        "B",
+        "C"
+      ]
     },
-    "checkin": [
-      "jerry1"
-    ]
+    "checkin": []
+  },
+  "754289": {
+    "id": "U62b4eacd88a754dd0ee4c5d433763a48",
+    "name": "9876",
+    "time": "20220101",
+    "description": "123",
+    "question": [
+      "Test",
+      "AAA"
+    ],
+    "reg": {},
+    "checkin": []
   }
 }
