@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Event Do</title>
+</head>
+
+<body id="body">
+
+    <h1 onclick="window.href=location.origin">Event Do</h1>
+    <div id="loading">
+        <h2>Loading...</h2>
+    </div>
+    <div id="reg" class="reg" style="display: none;">
+        <h2>Please choose your role</h2>
+        <a href="#" onclick="reg('1')" class="myButton2">Personal</a>
+        <a href="#" onclick="reg('2')" class="myButton2">Organization</a>
+    </div>
+
+    <div id="menu" class="menu" style="display: none;">
+        <h2 id="hello"></h2><br>
+        <div id="c"></div>
+        <a href="/regevent.html" id="regEvent" class="myButton" style="display: none;">註冊事件</a>
+    </div>
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

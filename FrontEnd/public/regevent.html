@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Event Do</title>
+</head>
+
+<body id="body">
+
+    <h1 onclick="location.href=location.origin">Event Do</h1>
+    <div id="QQ">
+        名稱：<input type="text" name="name" id="name"> <br>
+        時間：<input type="text" name="time" id="time"> <br>
+        註解：<input type="text" name="description" id="des"> <br><br>
+        <div id="d1">
+        問題: <input type="text" name="question" class="question">
+        </div>
+    </div>
+    <a href="#" id="newQ" class="myButton" onclick="newQ();">新增問題</a>
+    <a href="#" id="submit" class="myButton" onclick="submit();">送出</a>
+    <br><br>
+    <a href="#" id="STL" onclick="share()" class="myButton2" style="display: none; margin-top: 20px;">分享連結到Line</a>
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script src="./script2.js"></script>
+</body>
+
+</html>
